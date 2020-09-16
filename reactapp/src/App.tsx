@@ -25,17 +25,24 @@ function App() {
     for (let rIndex = TABLE_SIZE_Y - 1 ; rIndex >= 0 ; rIndex--) {
       const columns = []
       for (let cIndex = 0 ; cIndex < TABLE_SIZE_X ; cIndex++) {
-        columns.push((<td className='tableData'>{ rIndex === robot.getY() && cIndex === robot.getX() ? generateRobot() : null }</td>))
+        columns.push((<td className='tableData'><span className='tablePlaceholder'>{cIndex}, {rIndex}</span>{ rIndex === robot.getY() && cIndex === robot.getX() ? generateRobot() : null }</td>))
       }
       rows.push((<tr className='tableRow'>
         { columns }
       </tr>))
     }
-    return (<table id='tableTop'>
-      <tbody>
-        { rows }
-      </tbody>
-    </table>)
+    return (
+    <div>
+      <div style={{ textAlign: 'center' }}>North</div>
+      <div>
+        <table id='tableTop'>
+          <tbody>
+            { rows }
+          </tbody>
+        </table>
+      </div>
+      <div style={{ textAlign: 'center' }}>South</div>
+    </div>)
   }
 
   return (
