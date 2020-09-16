@@ -1,0 +1,50 @@
+@import url('/css/all.css');
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#tableTop {
+  border-collapse: collapse;
+}
+
+.tableRow {
+  height: 50px;
+}
+
+.tableData {
+  width: 50px;
+  border: thin solid #000;
+  text-align: center;
+}
+
+.actionHolder {
+  text-align: center;
+}
+
+.actionButtons {
+  margin: 5px;
+  background: #97e6dc;
+  border: none;
+  padding: 5px;
+  width: 50px;
+}
+
+.placeText {
+  padding: 5px;
+}
+
+#robot.south {
+  transform: rotate(180deg);
+}
+
+#robot.east {
+  transform: rotate(90deg);
+}
+
+#robot.west {
+  transform: rotate(-90deg);
+}
