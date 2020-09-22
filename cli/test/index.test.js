@@ -50,14 +50,14 @@ describe('Robot Test', () => {
   it ('Place NORTH-EAST, facing EAST, move 1', () => {
     // Good to reset the robot
     robot.reset()
-    robot.executeCommand('PLACE 4,4,EAST')
+    robot.executeCommand('PLACE 3,4,EAST')
     robot.executeCommand('MOVE')
-    assert.strictEqual('4, 4 EAST', robot.getPosition())
+    assert.strictEqual('3, 4 EAST', robot.getPosition())
   })
   it ('Place NORTH-EAST, facing EAST, turn left twice, move 5', () => {
     // Good to reset the robot
     robot.reset()
-    robot.executeCommand('PLACE 4,4,EAST')
+    robot.executeCommand('PLACE 3,4,EAST')
     robot.executeCommand('LEFT')
     robot.executeCommand('LEFT')
     robot.executeCommand('MOVE')
@@ -71,6 +71,12 @@ describe('Robot Test', () => {
     // Good to reset the robot
     robot.reset()
     robot.executeCommand('PLACE 5,0,NORTH')
+    assert.strictEqual(null, robot.getPosition())
+  })
+  it ('Place in a blocked coordinate', () => {
+    // Good to reset the robot
+    robot.reset()
+    robot.executeCommand('PLACE 1,1,NORTH')
     assert.strictEqual(null, robot.getPosition())
   })
 })
